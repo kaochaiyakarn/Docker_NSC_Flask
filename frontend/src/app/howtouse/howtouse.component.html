@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  
+<!-- </head> -->
+<body>
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+              </ul>
+              <form class="form-inline my-6 my-lg-3">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a routerLink="/uploadfile" class="nav-link" style="font-family:Lucida Sans Unicode, Lucida Grande, sans-serif" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/selectoption" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Upload files</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/estimatetraining" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Estimate training time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+                  </li>
+                      <li class="nav-item active">
+                        <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?<span class="sr-only">(current)</span></a>
+                      </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <!-- Not navigate to user profile && logout -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">
+                    <a routerLink="/profile" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">User Profile</a>
+                    <a (click)="logout()" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                    <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+                  </div>
+                </li>
+              </ul>
+              </form>
+
+            </div>
+          </nav>
+  </div>
+  <br><br>
+  
+
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+      <br>
+      <h3 style="color: #283747; margin-left: 80px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 250%;">How to use<br> </h3>
+      <h3 class="w3-text-blue"style= "margin-left: 80px; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 250%;">Sleep Stage Scoring<br> </h3><br>
+      <br>
+      <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">0. Click "Upload files" on the menu above the website. <br> </p>
+      <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">1. Select option. <br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">Create new model -> Creating new model from your own files<br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">Predict result -> To predict sleep stage from user input signal. <br> </p>
+      <p class="w3-right" style="color: #922B21; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 80%;">*If user want to create new model, look at 2)</p> <br>
+      <p class="w3-right" style="color: #922B21; margin-left: 400px; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 80%;">**If user want to predict sleep stage, look at 3)</p> <br> <br>
+      <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">2. Create new model<br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.1 Select model from public dataset <br> </p>
+      <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">- Software has 3 model from public dataset to let user<br> 
+         choose and try which one is suitable for your data,<br>
+         which are Sleep-EDF, ISRUC-SLEEP, MASS model.<br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.2 Upload signal file  <br> </p>
+      <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">- Uploading signal file as user want.
+        <br>  * Signal file is a file that contain sleep signal of subject, and the file extension is .edf<br>
+         * For example, Sleep01.edf<br> </p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.3 Upload label file <br> </p>
+         <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">- Uploading label file as user want.
+           <br>  * Label file is a file that contain sleep stage result of subject, and the file extension is .edf<br>
+           * For example, Label01.edf<br> 
+           * Label file need to match with signal file that user already upload in 2.2<br></p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.4 Click at <span><a routerLink="/uploadfiles" class="btn btn-success" role="button">Create new model</a>
+         </span> to finished process <br></p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.5 Wait for the new model<br> </p>
+         <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">* User can see the estimate training time from <span><a routerLink="/estimatetraining" class="btn btn-success" role="button">Estimate training time</a></span> <br>When already finished process in 2.4)<br></p>
+         <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">* Or user can see the estimate training time from menu above the browser 
+         <br><br><span><a routerLink="/estimatetraining" class="btn btn-secondary" role="button">Estimate training time</a></span><br></p>
+         <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">3. Predict Signal<br> </p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.1 Select model from public dataset ( SLEEP-EDF, ISRUC-SLEEP, MASS ) <br><br><span style="margin-left: 30px;"></span> from user created in 2) <br> </p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.2 Select signal file that user want to predict result. <br> </p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.3 Click on <span><a routerLink="/predictsignal" class="btn btn-success" role="button">Predict Result</a></span>  to finished process.  <br> </p>
+         <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.4 See the prediction result from click <span><a routerLink="/result" class="btn btn-success" role="button">Show Results</a></span>  when user finished 3.3) 
+           <br><br><span style="margin-left: 30px;"></span> or click <span><a routerLink="/result" class="btn btn-secondary" role="button">Results</a></span>  In menu bar above the website. <br> </p>
+    </div>
+
+  
+    <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+    </div>
+  </div>
+  
+  <!-- <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.3 Upload label file <br> </p>
+      <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">- Uploading label file as user want.
+        <br>  * Label file is a file that contain sleep stage result of subject, and the file extension is .edf<br>
+        * For example, Label01.edf<br> 
+        * Label file need to match with signal file that user already upload in 2.2<br></p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.4 Click at <span><a routerLink="/uploadfiles" class="btn btn-success" role="button">Create new model</a>
+      </span> to finished process <br></p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">2.5 Wait for the new model<br> </p>
+      <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">* User can see the estimate training time from <span><a routerLink="/estimatetraining" class="btn btn-success" role="button">Estimate training time</a></span> <br>When already finished process in 2.4)<br></p>
+      <p style="color: #283747; margin-left: 90px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 90%;">* Or user can see the estimate training time from menu above the browser 
+      <br><br><span><a routerLink="/estimatetraining" class="btn btn-secondary" role="button">Estimate training time</a></span><br></p>
+      <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">3. Predict Signal<br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.1 Select model from public dataset ( SLEEP-EDF, ISRUC-SLEEP, MASS ) <br><br><span style="margin-left: 30px;"></span> from user created in 2) <br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.2 Select signal file that user want to predict result. <br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.3 Click on <span><a routerLink="/predictsignal" class="btn btn-success" role="button">Predict Result</a></span>  to finished process.  <br> </p>
+      <p style="color: #283747; margin-left: 60px;  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 100%;">3.4 See the prediction result from click <span><a routerLink="/result" class="btn btn-success" role="button">Show Results</a></span>  when user finished 3.3) 
+        <br><br><span style="margin-left: 30px;"></span> or click <span><a routerLink="/result" class="btn btn-secondary" role="button">Results</a></span>  In menu bar above the website. <br> </p>
+    </div> -->
+  
+    <!-- <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+    </div>
+  </div> -->
+
+</div>
+</body>
+
+</html>

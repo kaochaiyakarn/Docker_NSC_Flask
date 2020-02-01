@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  
+  
+<!-- </head> -->
+<body>
+  <!-- nav bar on top -->
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+              </ul>
+              <form class="form-inline my-6 my-lg-3">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a routerLink="/uploadfile" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/selectoption" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Upload files</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/estimatetraining" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Estimate training time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+                  </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" aria-labelledby="navbarDropdown" style="width: 80px;">
+                    <!--not navigate to user profile && logout -->
+                    <a routerLink="/" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">User Profile</a>
+                    <a class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Logout</a>
+                    <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+                  </div>
+                </li>
+              </ul>
+              </form>
+
+            </div>
+          </nav>
+  </div>
+
+
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class=""style="color: #283747; font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 250%; margin-left:10%">My Profile<br> </h3>
+      <br>
+      <a routerLink="/howtouse" href="#" class="btn btn-danger btn-sm w3-right" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; " role="button">Edit profile</a>
+
+      <br>
+      <p style="color: #283747; margin-left: 30px;  font-weight: bold; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; font-size: 120%;">Information<br> </p>
+
+
+        <form (submit)="register()" style="margin-left:10%; width:50%">
+          <br>
+          <!-- First name -->
+          <div class="form-group">
+            <label for="name" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">First name</label>
+            <input type="text" class="form-control" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="first_name"  [(ngModel)]="credentials.first_name">
+          </div>
+          <!-- Last name -->
+          <div class="form-group">
+            <label for="name" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Last name</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" name="last_name" [(ngModel)]="credentials.last_name">
+          </div>   
+          <!-- Email address -->
+          <div class="form-group">
+            <label for="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Email address</label>
+            <input type="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" name="email" [(ngModel)]="credentials.email">
+          </div>
+          <div class="form-group">
+            <label for="inputphone" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >Phone number</label>
+            <input type="tel" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" name="Phone" [(ngModel)]="credentials.Phone">
+          </div>                      
+          <!-- Sex -->
+          <div class="form-group">
+            <label for="sex" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Sex</label>
+            <input type="sex" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" name="username"  [(ngModel)]="credentials.sex">
+          </div>
+          <!-- Date of birth -->
+          <div class="form-group">
+            <label for="dob" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Date of Birth</label>
+            <input type="dob" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" name="password" [(ngModel)]="credentials.dob">
+          </div>
+          <!-- Chronic Conditions -->
+          <div class="form-group">
+            <label for="inputchronic">Chronic Conditions</label>
+            <input type="text" class="form-control" id="inputchronic" >
+          </div>
+          <!-- Family chronic conditions -->
+          <div class="form-group">
+            <label for="inputfamchronic">Family's Chronic Conditions</label>
+            <input type="text" class="form-control" id="inputfamchronic" >
+          </div>
+          <!-- Address -->
+          <label for="inputAddress" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >Address</label>
+          <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" id="inputAddress" >
+        <!-- Address2 -->
+        <div class="form-group">
+          <label for="inputAddress2" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Address 2</label>
+          <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" id="inputAddress2" >
+        </div>
+            <form>
+              <div class="form-row">
+                <!-- City -->
+                <div class="col-5">
+                  <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >City</label>
+                  <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" >
+                </div>
+                <!-- State -->
+                <div class="col">
+                  <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >State</label>
+                  <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control">
+                </div>
+                <!-- Zip -->
+                <div class="col-3">
+                  <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >Zip</label>
+                  <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control" >
+                </div>
+              </div>
+            </form>
+          </form>
+
+    </div>
+  
+    <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%;  ">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="w3-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+    <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+            </ul>
+            <form class="form-inline my-6 my-lg-3">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ">
+                  <a routerLink="/uploadfile" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Home</a>
+                    <!-- <span class="sr-only">(current)</span></a> -->
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/selectoption" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Upload files</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/estimatetraining" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Estimate training time</a>
+                </li>
+                <li class="nav-item">
+                  <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+                </li>
+                    <li class="nav-item">
+                      <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+                    </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown
+                </a>
+                <!-- not navigate to user profile && logout -->
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px;">
+                  <a routerLink="/profile" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">User Profile</a>
+                  <a (click)="logout()" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                  <!-- <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="#">Something else here</a> -->
+                </div>
+              </li>
+            </ul>
+            </form>
+
+          </div>
+        </nav>
+</div>
+
+<div class="container">
+  <div class="jumbotron mt-5">
+    <div class="col-sm-8 mx-auto">
+      <h1 class="text-center">PROFILE</h1>
+    </div>
+    <table class="table col-md-6 mx-auto">
+      <tr>
+        <td>Fist Name</td>
+        <td>{{ details?.identity.first_name }}</td>
+      </tr>
+      <tr>
+        <td>Last Name</td>
+        <td>{{ details?.identity.last_name }}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{ details?.identity.email }}</td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</html>

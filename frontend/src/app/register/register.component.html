@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+
+<!-- </head> -->
+
+<body>
+
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline my-6 my-lg-3 bg-dark">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                href="#sleepstagescoring">Sleep Stage Scoring</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                href="#transferlearning">Transfer Learning</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                href="#ourwork">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                href="#trydemo">TRY DEMO</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/login" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Sign In</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/register" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Sign Up</a>
+            </li>
+
+          </ul>
+        </form>
+
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5 mt-5 mx-auto">
+
+        <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 360px; height: 700px;">
+        <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 360px; height: 700px;">
+
+
+      </div>
+
+
+      <!-- h1 class="h3 mb-3 font-weight-normal" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Register</h1> -->
+      <div class="col-md-7 mt-7 mx-auto">
+        <form (submit)="register()">
+
+          <br><br><br>
+          <h1 class="h3 mb-3 font-weight-normal w3-right"
+            style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Register</h1>
+          <br><br><br><br>
+          <!-- Username -->
+          <div class="form-group">
+            <label for="username" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Username</label>
+            <input type="username" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+              class="form-control" name="username" placeholder="Enter username" [(ngModel)]="userInformation.userName">
+          </div>
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Password</label>
+            <input type="password" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+              class="form-control" name="password" placeholder="Password" [(ngModel)]="userInformation.password">
+          </div>
+          <!-- Confirm password -->
+          <div class="form-group">
+            <label for="password" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Confirm
+              Password</label>
+            <input type="password" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+              class="form-control" name="password_confirm" placeholder="Confirm Password"
+              [(ngModel)]="userInformation.checkPassword">
+          </div>
+          <br>
+          <p class="h3 mb-3 w3-center" style="font-size: 130%;">Personal Information</p>
+          <!-- First name -->
+          <div class="form-group">
+            <label for="name" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">First name</label>
+            <input type="text" class="form-control" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+              name="first_name" placeholder="Enter your first name" [(ngModel)]="userInformation.first_name">
+          </div>
+          <!-- Last name -->
+          <div class="form-group">
+            <label for="name" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Last name</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control"
+              name="last_name" placeholder="Enter your lastname" [(ngModel)]="userInformation.last_name">
+          </div>
+          <!-- Sex -->
+          <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Sex</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                    type="radio" name="gridRadios" id="gridRadios1" value="male" [(ngModel)]="userInformation.sex" >
+                  <label class="form-check-label" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                    for="gridRadios1">
+                    Male
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                    type="radio" name="gridRadios" id="gridRadios2" value="female" [(ngModel)]="userInformation.sex">
+                  <label class="form-check-label" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                    for="gridRadios2">
+                    Female
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <!-- Phone number -->
+          <div class="form-group">
+            <label for="inputphone" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Phone
+              number</label>
+            <input type="tel" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control"
+              name="pnumber" placeholder="Enter Phone number" [(ngModel)]="userInformation.pnumber">
+          </div>
+          <!-- </form> -->
+          <!-- <h1 class="h3 mb-3 font-weight-normal w3-right"
+            style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Register</h1> -->
+          <div class="form-group">
+            <label for="inputchronic">Chronic Conditions</label>
+            <input type="text" class="form-control" name="chronic" id="inputchronic" placeholder="Enter Chronic coditions" [(ngModel)]="userInformation.chronic">
+          </div>
+          <div class="form-group">
+            <label for="inputfamchronic">Family's Chronic Conditions</label>
+            <input type="text" class="form-control" name="fChronic" id="inputfamchronic" placeholder="Enter Family's Chronic coditions" [(ngModel)]="userInformation.fChronic">
+          </div>
+          <!-- Email address -->
+          <div class="form-group">
+            <label for="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Email
+              address</label>
+            <input type="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+              class="form-control" name="email" placeholder="Enter email" [(ngModel)]="userInformation.email">
+          </div>
+          <!-- Address -->
+          <label for="inputAddress" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Address</label>
+          <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="addr" class="form-control"
+            id="inputAddress" placeholder="1234 Main St" [(ngModel)]="userInformation.addr">
+
+          <!-- Address2 -->
+          <div class="form-group">
+            <label for="inputAddress2" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Address
+              2</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="addr2" class="form-control"
+              id="inputAddress2" placeholder="Apartment, studio, or floor" [(ngModel)]="userInformation.addr2">
+          </div>
+          <!-- <form> -->
+
+          <!-- City -->
+          <div class="form-group">
+            <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">City</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="city" class="form-control"
+              placeholder="City" [(ngModel)]="userInformation.city">
+          </div>
+          <!-- State -->
+          <div class="form-group">
+            <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">State</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="state" class="form-control"
+              placeholder="State" [(ngModel)]="userInformation.state">
+          </div>
+          <!-- Zip -->
+          <div class="form-group">
+            <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Zip</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="zip" class="form-control"
+              placeholder="Zip" name = 'zip' [(ngModel)]="userInformation.zip">
+          </div>
+
+          <button  type="submit"
+            style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+            class="btn btn-lg btn-primary btn-block">Register!</button>
+        </form>
+      </div>
+
+      <br>
+      <!-- why cannot navigate to another page -->
+      <!-- <button routerLink="/registersuccess" type="submit"
+          style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+          class="btn btn-lg btn-primary btn-block">Register!</button> -->
+
+    </div>
+  </div>
+
+</body>
+
+</html>
+
+<!-- <div class="col-md-4 mt-4 mx-auto">
+        <br> -->
+<!-- <form (submit)="register()"> -->
+<!-- <div class="form-group">
+            <br>
+            <br>
+            <h1 class="h3 mb-3 font-weight-normal w3-right"
+              style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Register</h1>
+            <br>
+            <br>
+            <div class="form-group">
+              <label for="inputchronic">Chronic Conditions</label>
+              <input type="text" class="form-control" id="inputchronic" placeholder="Enter Chronic coditions">
+            </div>
+            <div class="form-group">
+              <label for="inputfamchronic">Family's Chronic Conditions</label>
+              <input type="text" class="form-control" id="inputfamchronic"
+                placeholder="Enter Family's Chronic coditions">
+            </div> -->
+<!-- Email address -->
+<!-- <div class="form-group">
+              <label for="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Email
+                address</label>
+              <input type="email" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                class="form-control" name="email" placeholder="Enter email" [(ngModel)]="credentials.email">
+            </div> -->
+<!-- Address -->
+<!-- <label for="inputAddress"
+              style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Address</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control"
+              id="inputAddress" placeholder="1234 Main St">
+          </div> -->
+<!-- Address2 -->
+<!-- <div class="form-group">
+            <label for="inputAddress2" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Address
+              2</label>
+            <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="form-control"
+              id="inputAddress2" placeholder="Apartment, studio, or floor">
+          </div> -->
+<!-- <form> -->
+<!-- <div class="form-row"> -->
+<!-- City -->
+<!-- <div class="col-5">
+                <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">City</label>
+                <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                  class="form-control" placeholder="City">
+              </div> -->
+<!-- State -->
+<!-- <div class="col">
+                <label for="inputcity"
+                  style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">State</label>
+                <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                  class="form-control" placeholder="State">
+              </div> -->
+<!-- Zip -->
+<!-- <div class="col-3">
+                <label for="inputcity" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Zip</label>
+                <input type="text" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+                  class="form-control" placeholder="Zip">
+              </div>
+            </div> -->
+<!-- </form> -->
+
+<!-- <br> -->
+<!-- why cannot navigate to another page -->
+<!-- <button routerLink="/registersuccess" type="submit"
+            style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+            class="btn btn-lg btn-primary btn-block">Register!</button> -->
+
+<!-- </form> -->
+
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->

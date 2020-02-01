@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+<!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+<!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+
+<!-- </head> -->
+<style>
+  .my-drop-zone {
+    border: dotted 3px lightgray;
+  }
+
+  .nv-file-over {
+    border: dotted 3px red;
+  }
+
+  /* Default class applied to drop zones on over */
+  .another-file-over-class {
+    border: dotted 3px green;
+  }
+
+  html,
+  body {
+    height: 100%;
+  }
+</style>
+
+<body>
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline my-6 my-lg-3">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a routerLink="/uploadfile" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Home</a>
+            </li>
+            <li class="nav-item active">
+              <a routerLink="/selectoption" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Upload files<span
+                  class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/estimatetraining" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Estimate training time</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/result" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+            </li>
+            <li class="nav-item">
+              <a routerLink="/howtouse" class="nav-link"
+                style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle"
+                style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#"
+                id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <!-- not navigate user profile && logout -->
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px;">
+                <a routerLink="/profile" class="dropdown-item"
+                  style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">User Profile</a>
+                <a (click)="logout()" class="dropdown-item"
+                  style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+              </div>
+            </li>
+          </ul>
+        </form>
+
+      </div>
+    </nav>
+  </div>
+
+  <!-- Create new model -->
+  <div class="Container">
+    <div class="row">
+      <div class="col-lg-7 col-md-6 col-sm-6">
+        <br>
+        <br>
+        <br>
+        <br>
+        <a routerLink="/howtouse" href="#" class="btn btn-danger btn-sm w3-right"
+          style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" role="button">How to use ?</a>
+        <br><br>
+        <h3 class="w3-center"
+          style="color: #283747; margin-left: 20px; font-weight: bold; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 250%;">
+          Create new model<br> </h3>
+        <br>
+        <h3
+          style="color: #283747; margin-left: 30px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">
+          Select the model from public dataset<br> </h3>
+        <br>
+        <!-- Label Sleep EDF -->
+        <label class="Container"
+          style="color: #283747; margin-left: 50px; font-size: 130%; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">
+          <input type="radio" name="radio"> SLEEP EDF
+          <span class="checkmark"></span>
+        </label>
+        <!-- Label ISRUC-SLEEP -->
+        <label class="Container"
+          style="color: #283747; margin-left: 50px; font-size: 130%; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">
+          <input type="radio" name="radio"> ISRUC-SLEEP
+          <span class="checkmark"></span>
+        </label>
+        <!-- Label MASS -->
+        <label class="Container"
+          style="color: #283747; margin-left: 50px; font-size: 130%; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">
+          <input type="radio" name="radio"> MASS
+          <span class="checkmark"></span>
+        </label>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h3
+          style="color: #283747; margin-left: 30px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">
+          Select Signal file<br> </h3>
+
+      <form (ngSubmit)="uploadSubmit()">
+      <div class="uploadfilecontainer" (click)="fileInput.click()"  appDragDrop (onFileDropped)="uploadFile($event)">
+        <input hidden type="file" #fileInput (change)="uploadFile($event.target.files)" accept=".png">
+      </div>
+        <div class="files-list" *ngFor="let item of Allfile; let i=index">
+          <p>{{ item[0].name }}  {{item[0].size}}MB</p>
+          <button class="delete-file" (click)="deleteAttachment(i)">
+            <img src="./Recycle_Bin_Full.png">
+          </button>
+        </div>
+        <button  type="submit"
+            style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;"
+            class="btn btn-lg btn-primary btn-block">Upload!</button>
+      </form>
+
+        <br>
+        <br>
+        <h3
+          style="color: #283747; margin-left: 30px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">
+          Select Label file<br> </h3>
+        <select name="files"
+          style="width: 150px; height: 40px; margin-left: 300px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">
+          <option value="Example_1" style="font-family:Lucida Sans Unicode, Lucida Grande, sans-serif;">Example_1
+          </option>
+          <option value="Example_2" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Example_2
+          </option>
+          <br>
+          <br>
+        </select>
+        <br>
+        <br>
+        <br>
+        <a routerLink="/uploadfilesuccess" href="#" class="btn btn-success btn-lg w3-right"
+          style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" role="button">Create new model</a>
+
+
+      </div>
+      <div class="col-lg-5 col-md-6 col-sm-6">
+        <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 550px; ">
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

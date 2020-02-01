@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  
+<!-- </head> -->
+<body>
+
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+              </ul>
+              <form class="form-inline my-6 my-lg-3">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a routerLink="/uploadfile" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/selectoption" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Upload files</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/estimatetraining" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Estimate training time</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results<span class="sr-only">(current)</span></a>
+                  </li>
+                      <li class="nav-item">
+                        <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+                      </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" style="margin-right: 50px;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <!-- not navigate to user profile && logout -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px;">
+                    <a routerLink="/profile" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">User Profile</a>
+                    <a (click)="logout()" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                    <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+                  </div>
+                </li>
+              </ul>
+              </form>
+
+            </div>
+          </nav>
+  </div>
+  <!-- Navbar (sit on top) -->
+<!-- <div class="w3-top">
+    <div class="w3-bar w3-dark-grey w3-hide-small w3-right" id="myNavbar">
+      <div class="dropdown w3-right">
+        <button class="dropbtn">after login</button>
+        <div class="dropdown-content">
+          <a href="#">User Profile</a>
+          <a href="#">Logout</a>
+        </div>
+      </div> -->
+         
+      <!-- <div class="dropdown">
+        <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div> -->
+
+      <!-- <a href="#successlogin" class="w3-bar-item w3-button w3-right">after login</a> -->
+
+      <!-- <a href="#howtouse" class="w3-bar-item w3-button w3-hide-small w3-right">How to use ?</a>
+      <a href="#results" class="w3-bar-item w3-button w3-hide-small w3-right">Results</a>
+      <a href="#estimatetrainingtime" class="w3-bar-item w3-button w3-hide-small w3-right">Estimate training time</a>
+      <a href="#uploadfile" class="w3-bar-item w3-button w3-hide-small w3-right">Upload files</a>
+      <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-right">Home</a>
+</div>  -->
+
+  <!-- Navbar on small screens -->
+<!-- <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"> -->
+    <!-- <a href="successlogin" class="w3-bar-item w3-button" onclick="toggleFunction()">after login</a> -->
+    <!-- <a href="#howtouse" class="w3-bar-item w3-button" onclick="toggleFunction()">How to use ?</a>
+    <a href="#results" class="w3-bar-item w3-button" onclick="toggleFunction()">Results</a>
+    <a href="#estimatetrainingtime" class="w3-bar-item w3-button" onclick="toggleFunction()">Estimate training time</a>
+    <a href="#uploadfile" class="w3-bar-item w3-button" onclick="toggleFunction()">Upload files</a>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">Home</a>
+  </div>
+</div> -->
+<br>
+<br>
+<br>
+<br>
+<h3 style="color: #283747; margin-left: 80px; font-weight: bold; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 250%;">Sleep Scoring Result<br> </h3>
+
+</body>
+
+</html>

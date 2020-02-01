@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  
+<!-- </head> -->
+<body>
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <!-- <li class="nav-item ">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Upload files</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Estimate training time <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Results</a>
+          </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">How to use ?</a>
+              </li> -->
+              </ul>
+              <form class="form-inline my-6 my-lg-3">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item ">
+                    <a routerLink="/uploadfile" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a routerLink="/selectoption" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Upload files<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/estimatetraining" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Estimate training time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+                  </li>
+                      <li class="nav-item">
+                        <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+                      </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <!-- not navigate to user profile && logout -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px;">
+                    <a routerLink="/profile" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">User Profile</a>
+                    <a (click)="logout()" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                    <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+                  </div>
+                </li>
+              </ul>
+              </form>
+
+            </div>
+          </nav>
+  </div>
+
+  <!-- Upload file -->
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+      <br>
+      <br>
+      <br>
+      <br>
+      <a routerLink="/howtouse" href="#" class="btn btn-danger btn-sm w3-right" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" role="button">How to use ?</a>
+      <br>
+
+      <h3 class="w3-center"style="color: #283747; font-weight: bold; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 250%;">Upload files<br> </h3>
+      <br>
+      <br>
+      <h3 class="w3-center w3-right-align" style="color: #283747; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">Welcome to Transferability of Deep Learning Features in<br> </h3>
+      <br>
+      <h2 class="w3-center" style="color: #039BE5; margin-left: 20px; font-weight: bolder; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 200%;">Sleep Stage Scoring<br> </h2>
+      
+      <br>
+      <br>
+      <br>
+      <h3 style="color: #283747; margin-left: 20px; font-weight:550 ; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">Select Option<br> </h3>
+      <br>
+      <a routerLink="/uploadfiles" href="#" class="btn btn-success btn-lg" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; margin-left: 70px;" role="button">Create new model</a>
+      <a routerLink="/predictsignal" href="#" class="btn btn-info btn-lg" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; margin-left: 70px;" role="button">Predict signal</a>
+      <br>
+      <!-- Check mark -->
+      <!-- <label class="Container" style="color: #283747; margin-left: 150px; font-size: 130%;">
+        <input type="radio" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="radio">   Create new model
+        <span class="checkmark"></span>
+        </label>
+        <br>
+      <label class="Container" style="color: #283747; margin-left: 150px; font-size: 130%;">
+        <input type="radio" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" name="radio">   Predict signal
+        <span class="checkmark"></span>
+      </label> -->
+
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 550px; ">
+    </div>
+  </div>
+</div>
+</body>
+</html>

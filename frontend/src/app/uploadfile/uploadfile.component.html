@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+  <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+  <!-- <link href="css/bootstrap-responsive.min.css" rel="stylesheet"> -->
+  
+<!-- </head> -->
+<body>
+  <div class="w3-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <a class="navbar-brand" href="#">Sleep Stage Scoring</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+              </ul>
+              <form class="form-inline my-6 my-lg-3">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active ">
+                    <a routerLink="/uploadfile" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Home</a>
+                      <!-- <span class="sr-only">(current)</span></a> -->
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/selectoption" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Upload files</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/estimatetraining" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" class="nav-link" href="#">Estimate training time</a>
+                  </li>
+                  <li class="nav-item">
+                    <a routerLink="/result" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">Results</a>
+                  </li>
+                      <li class="nav-item">
+                        <a routerLink="/howtouse" class="nav-link" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#">How to use ?</a>
+                      </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" style="margin-right: 50px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <!-- not navigate to user profile && logout -->
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="width: 80px;">
+                    <a routerLink="/profile" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" >User Profile</a>
+                    <a (click)="logout()" class="dropdown-item" style="font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;">Logout</a>
+                    <!-- <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a> -->
+                  </div>
+                </li>
+              </ul>
+              </form>
+
+            </div>
+          </nav>
+  </div>
+
+<!-- First page -->
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+      <br>
+      <br>
+      <br>
+      <br>
+      <h3 class="w3-center" style="color: #283747; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 250%;">Hello {{textShow}}<br> </h3>
+      <br>
+      <br>
+      <h3 class="w3-center w3-right-align" style="color: #283747; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">Welcome to Transferability of Deep Learning Features in<br> </h3>
+      <br>
+      <h2 class="w3-center" style="color: #039BE5; font-weight: bolder; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 200%;">Sleep Stage Scoring<br> </h2>
+      
+      <br>
+      <br>
+      <br>
+      <h3 style="color: #283747; margin-left: 3%; font-weight:550 ; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif; font-size: 170%;">Want to upload files ?<br> </h3>
+      <br>
+      <a routerLink="/selectoption"href="#" class="btn btn-success btn-lg" style="margin-left: 10%; width:150px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" role="button">Upload</a>
+      <a routerLink="/howtouse" href="#" class="btn btn-danger btn-lg" style="margin-left: 10%; width: 180px; font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;" role="button">How to use ?</a>
+      <br>
+    </div>
+    <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+    </div>
+  </div>
+</div>
+
+<!-- Sleep Stage Scoring? -->
+<div id="sleepstagescroing" class="Container">
+  <div class="row">
+    <div class="col-md-7 col-lg-7 col-sm-8">
+      <br><br><br><br>
+      <h3 class="w3-center w3-right-align" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif; font-size: 200%;">SLEEP STAGE SCORING<br> </h3>
+      <br>
+      <p style="font-size: 500%; margin-left: 10%; color: #A93226;">"</p>
+      <h2 class="w3-center"style="color: #283747; line-height:200%; font-family: Comic Sans MS, cursive, sans-serif; font-size: 160%">Sleep Stage Scoring are consists 
+        of five stages <br>including Non-REM(NREM) Sleep(Stage 0,1,2,3), 
+        <br>and REM sleep. Periods of wakefulness occur <br> before and intermittently 
+        throughout the various <br> sleep stages or as one shifts sleeping position.<br> </h2>
+      <br>
+      <h1 style="font-size: 500%; margin-left:90%; color: #A93226;">"<br> </h1>
+
+    </div>
+    <div class= "col-md-5 col-lg-5 col-sm-4">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+
+ <!-- Stage of Sleep -->
+ <h2 class="w3-center" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif;">STAGE OF SLEEP</h2>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div class="Container">
+   <br>
+   <div class="row">
+     <div class="col-lg-2.4 col-md-2.4 col-sm-2.4" >
+       <div class = "flip-card">
+         <div class = "flip-card-inner">
+           <div class = "flip-card-front">
+             <img src="src/app/landingpage/stage0.png" alt="stage0" style="width: 100%; height:100%;">
+           </div>
+           <div class ="flip-card-back">
+             <!-- Stage 0 -->
+             <h2 class="w3-center w3-center-align" style="font-family: Comic Sans MS, cursive, sans-serif ; font-weight: bold; font-size: 150%;">Stages 0</h2>
+             <br>
+             <h3 class="w3-center" style="font-family:Comic Sans MS, cursive, sans-serif; font-size: 125%;">Eyes open, responsive to external stimuli and it can hold intelligible conversation</h3>
+           </div>
+         </div>
+       </div>
+     </div>
+     <div class = "col-lg-2.4 col-md-2.4 col-sm-2.4">
+       <div class = "flip-card">
+         <div class = "flip-card-inner">
+           <div class = "flip-card-front">
+             <img src="src/app/landingpage/stage1.png" alt="stage1" style="width: 100%; height:100%;">
+           </div>
+           <div class ="flip-card-back1">
+             <!-- Stage 1 -->
+             <h2 class="w3-center w3-center-align" style="font-family: Comic Sans MS, cursive, sans-serif; font-weight: bold; font-size: 150%;">Stages 1</h2>
+             <br>
+             <h3 class="w3-center" style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 125%;">Your body starts preparing for deep sleep. Eye movements and brain waves slow down, your body temperature drops, and your heart rate slows down</h3>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class = "col-lg-2.4 col-md-2.4 col-sm-2.4">
+       <div class = "flip-card">
+         <div class = "flip-card-inner">
+           <div class = "flip-card-front">
+             <img src="src/app/landingpage/stage2.png" alt="stage2" style="width: 100%; height:100%;">
+           </div>
+           <div class ="flip-card-back2">
+             <!-- Stage 2 -->
+             <h2 class="w3-center w3-center-align" style="font-family:Comic Sans MS, cursive, sans-serif; font-weight: bold; font-size: 150%;">Stages 2</h2>
+             <br>
+             <h3 class="w3-center" style="font-family:Comic Sans MS, cursive, sans-serif; font-size: 125%;">The first actual stage of define NREM sleep. Awakenings or arousals do not occur as easily as in stage1 sleep and slow-moving eye rolls discontinued. Brain waves continues to slow with specific bursts of rapid activity known as sleep spindles intermixed </h3>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class = "col-lg-2.4 col-md-2.4 col-sm-2.4">
+       <div class = "flip-card">
+         <div class = "flip-card-inner">
+           <div class = "flip-card-front">
+             <img src="src/app/landingpage/stage3.png" alt="stage3" style="width: 100%; height:100%;">
+           </div>
+           <div class ="flip-card-back3">
+             <!-- Stage 3 -->
+             <h2 class="w3-center w3-center-align" style="font-family: Comic Sans MS, cursive, sans-serif; font-weight: bold; font-size: 150%;">Stages 3</h2>
+             <br>
+             <h3 class="w3-center" style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 125%;">Sometimes also called ’NREM Sleep’ The most restorative stage of sleep consists of delta waves or slow waves</h3>
+           </div>
+         </div>
+       </div>
+     </div>
+
+     <div class = "col-lg-2.4 col-md-2.4 col-sm-2.4">
+       <div class = "flip-card">
+         <div class = "flip-card-inner">
+           <div class = "flip-card-front">
+             <img src="src/app/landingpage/stagerem.png" alt="stagerem" style="width: 100%; height:100%;">
+           </div>
+           <div class ="flip-card-back4">
+             <!-- Stage REM -->
+             <h2 class="w3-center w3-center-align" style="font-family: Comic Sans MS, cursive, sans-serif; font-weight: bold; font-size: 150%;">Stages REM</h2>
+             <br>
+             <h3 class="w3-center" style="font-family: Comic Sans MS, cursive, sans-serif; font-size: 125%;">REM Sleep also known as rapid eye movement, is most commonly known as the dreaming stage. Eye movements are rapid, moving from side to side and brain waves are more active than in stage 2-3 of sleep.</h3>
+           </div>
+         </div>
+       </div>
+   </div>
+
+</div>
+</div>
+<br><br><br>
+ <!-- Why we have to measure sleep stage -->
+ <h2 class="w3-center" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif;">WHY WE HAVE TO MEASURE SLEEP STAGE</h2>
+ <br>
+ <br>
+ <br>
+ <br>
+ <div class="Container">
+   <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Choice1 -->
+       <img src= "src/app/landingpage/01.png" alt="01" style="width: 100px; margin-left: 40px; float: left;">
+       <h2 style="font-size: 19px; font-family:Comic Sans MS, cursive, sans-serif; color:#909497; line-height: 150%;">Help to better understand the quality of sleep</h2>
+       </div>
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Choice2 -->
+       <img src= "src/app/landingpage/02.png" alt="02" style="width: 100px; margin-left: 40px; float: left;">
+       <h2 style="font-size: 19px; font-family:Comic Sans MS, cursive, sans-serif; color:#909497; line-height: 150%;">Know more precisely the level of sleep</h2>
+  
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Choice3 -->
+         <img src= "src/app/landingpage/03.png" alt="03" style="width: 100px; margin-left: 40px; float: left;">
+         <h2 style="font-size: 19px; font-family:Comic Sans MS, cursive, sans-serifs; color:#909497; line-height: 150%;">Estimate the amount of time which you wake up or do not sleep well</h2>
+     </div>
+   </div>
+   <br>
+   <br>
+   <br>
+   <br>
+   <div class="row">
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Picture -->
+       <img src= "src/app/landingpage/why.png" alt="why" style="width:100%; margin-left: 40px; float: left;">
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Choice4 -->
+       <img src= "src/app/landingpage/04.png" alt="04" style="width: 100px; margin-left: 40px; float: left;">
+       <h2 style="font-size: 19px; font-family:Comic Sans MS, cursive, sans-serif; color:#909497; line-height: 150%;">Use heart rate to calculate while sleeping and know the precise sleep condition</h2>
+     </div>
+     <div class="col-lg-4 col-md-4 col-sm-4">
+       <!-- Choice5 -->
+       <img src= "src/app/landingpage/05.png" alt="05" style="width: 100px; margin-left: 40px; float: left;">
+       <h2 style="font-size: 19px; font-family:Comic Sans MS, cursive, sans-serif; color:#909497; line-height: 150%;">Get the suggestion sleep insights from processing to improve the quality of sleep</h2>
+     </div>
+   </div>
+ </div>
+ <br>
+ <br>
+ <br>
+ <br>
+ <br>
+<!-- Transfer Learning Page -->
+<h2 id= "transferlearning" class="w3-center" style="color: #283747; font-family:Comic Sans MS, cursive, sans-serif ;">TRANSFER LEARNING</h2>
+<br>
+<br>
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-7">
+      <h1 style="font-size: 500%; margin-left: 5%; color: #A93226;">"</h1>
+      <h2 class="w3-center"style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif; font-size: 150%; line-height:150%; margin-left: 5% margin-right:5%">Transfer learning is a machine learning method where a model developed for a task is reused as the starting point for a model on a second task</h2>
+      <h1 style="font-size: 500%; margin-left: 90%; color: #A93226;">"</h1>
+      <br>
+      <a href="uploadfile/#trydemo" style="margin-left: 50%; background-color: #F97412; font-family: Comic Sans MS, cursive, sans-serif;" class="btn btn-danger btn-lg" role="button">TRY NOW</a>
+
+      <!-- <a href="#trydemo" class="button" style="background-color: #F97412; border-radius: 12px; font-family: Comic Sans MS, cursive, sans-serif;">TRY NOW</a>  -->
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
+    <!-- Picture -->
+    <div class="col-lg-6 col-md-4 col-sm-5">
+      <img src= "src/app/landingpage/TF.png" alt="tf" style="width: 80%; margin-left: 10%;">
+
+    </div>
+  </div>
+</div>
+<!-- Our Work page -->
+<h2 id="ourwork" class="w3-center" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif;">OUR WORK</h2>
+<br>
+<br>
+<div class="Container">
+  <div class="row">
+    <div class="col-lg-5 col-md-6 col-sm-4">
+      <img src="src/app/landingpage/work.png" alt="work" style="width: 90%; margin-left: 5%;" class="w3-center">
+    </div>
+    <div class="col-lg-7 col-md-6 col-sm-8" style="">
+      <img src="src/app/landingpage/step.png" alt="work" style="width:100%;">
+    </div>
+  </div>
+</div>
+
+
+<div class="Container"  id="trydemo" >
+  <div class="row">
+    <div class="col-lg-7 col-md-6 col-sm-6">
+        <!-- Try to use page -->
+        <br><br><br>
+<h2 class="w3-center" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif; font-size: 180%;">TRY IT FROM EXAMPLE FILES</h2>
+<br>
+<!-- Select from public dataset -->
+<h3 style="color: #283747; font-family: Verdana, Geneva, sans-serif; margin-left: 100px; font-size: 140%;">Select model from Public Sleep Dataset</h3>
+<br>
+  <!-- Label Sleep EDF -->
+  <label class="Container" style="color: #283747; margin-left: 150px; font-size: 130%; font-family: Verdana, Geneva, sans-serif;">
+    <input type="radio" name="radio" [(ngModel)]="trainDataset" value="sleepEDF" (click)="setTrainDataset('sleepEDF')" >   SLEEP EDF
+    <span class="checkmark"></span>
+    </label>
+    <br>
+    <!-- Label ISRUC-SLEEP -->
+  <!-- <label class="Container" style="color: #283747; margin-left: 150px; font-size: 130%; font-family: Verdana, Geneva, sans-serif;">
+    <input type="radio" name="radio" [(ngModel)]="trainDataset" value="ISRUC" (click)="setExampleFile('ISRUC')">   ISRUC-SLEEP
+    <span class="checkmark"></span>
+  </label>
+  <br> -->
+  <!-- Label MASS -->
+  <label class="Container" style="color: #283747; margin-left: 150px; font-size: 130%; font-family: Verdana, Geneva, sans-serif;">
+    <input type="radio" name="radio" [(ngModel)]="trainDataset" value="MASS" (click)="setTrainDataset('MASS')" >   MASS
+    <span class="checkmark"></span>
+    </label>
+
+    <!-- Select example signal file -->
+  <h3 style="color: #283747; font-family:Verdana, Geneva, sans-serif; margin-left: 100px; font-size: 130%;">Select example signal file</h3>
+  <br>
+  <br>  
+  <select (change)="setExampleFile($event)" name="files" style="width: 150px; height: 40px; margin-left: 300px; font-family: Verdana, Geneva, sans-serif;" >
+      <option value="SC4001E0.edf">SC4001E0.edf</option>
+      <option value="SC4002E0.edf">SC4002E0.edf</option>
+      <br>
+      <br>
+  </select>
+
+  <br><br><br><br><br>
+
+  <div class="row">
+    <!-- <div class="col-lg-4"></div> -->
+    <div class="col-lg-2">
+      <a (click)="toggle()" class="button" style="background-color: #F97412; border-radius: 15px; margin-left: 530px; font-family:Verdana, Geneva, sans-serif ;">SHOW REPORT</a> 
+    </div>
+    <!-- <div class="col-lg-4"></div> -->
+  </div>
+
+    </div>
+
+    <div class="col-lg-5 col-md-6 col-sm-6">
+      <img src="src/app/uploadfile/brainwaves1.png" alt="brainwave" style="width: 100%; ">
+    </div>
+
+  </div>
+
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+  <h2 id="showreport3" class="w3-center" style="color: #283747; font-family: Comic Sans MS, cursive, sans-serif;">EXAMPLE REPORT</h2>
+  
+  <ng-container *ngIf="show">
+  
+    <div class="row" id="showreport4">
+      <div class = "col-md-6">
+        <div echarts [options]="LeftChart" class="demo-chart"></div>
+        <h3 class="w3-center"> Raw Signal</h3>
+      </div>
+      <div class = "col-md-6">
+        <div echarts [options]="RightChart" class="demo-chart"></div>
+        <h3 class="w3-center"> Stage of Sleep</h3>
+      </div>
+
+  </div>
+
+  <div>
+    <h2 class="w3-left-align"> Conclusion </h2>
+    <a> Sleep [] Hours <br> </a>
+    <h4> Stage of sleep <br> </h4>
+    <a> Wake : [] <br> </a>
+    <a> N1 : [] <br> </a>
+    <a> N2 : [] <br> </a>
+    <a> N3 : [] <br> </a>
+    <a> REM : [] <br> </a>
+  </div>
+
+</ng-container>
+
+</body>
+
+</html>
